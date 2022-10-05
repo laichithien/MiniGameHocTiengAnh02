@@ -32,7 +32,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.homeButton = new System.Windows.Forms.PictureBox();
             this.backButton = new System.Windows.Forms.PictureBox();
-            this.pic_animal = new System.Windows.Forms.PictureBox();
+            this.pic = new System.Windows.Forms.PictureBox();
             this.answerField = new System.Windows.Forms.TextBox();
             this.scoreField = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_animal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,9 @@
             this.homeButton.Size = new System.Drawing.Size(60, 60);
             this.homeButton.TabIndex = 3;
             this.homeButton.TabStop = false;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            this.homeButton.MouseEnter += new System.EventHandler(this.homeButton_MouseEnter);
+            this.homeButton.MouseLeave += new System.EventHandler(this.homeButton_MouseLeave);
             // 
             // backButton
             // 
@@ -76,20 +79,23 @@
             this.backButton.Size = new System.Drawing.Size(60, 60);
             this.backButton.TabIndex = 4;
             this.backButton.TabStop = false;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.MouseEnter += new System.EventHandler(this.backButton_MouseEnter);
+            this.backButton.MouseLeave += new System.EventHandler(this.backButton_MouseLeave);
             // 
-            // pic_animal
+            // pic
             // 
-            this.pic_animal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_animal.Location = new System.Drawing.Point(383, 129);
-            this.pic_animal.Name = "pic_animal";
-            this.pic_animal.Size = new System.Drawing.Size(530, 323);
-            this.pic_animal.TabIndex = 5;
-            this.pic_animal.TabStop = false;
+            this.pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic.Location = new System.Drawing.Point(383, 129);
+            this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(530, 323);
+            this.pic.TabIndex = 5;
+            this.pic.TabStop = false;
             // 
             // answerField
             // 
             this.answerField.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.answerField.Location = new System.Drawing.Point(437, 500);
+            this.answerField.Location = new System.Drawing.Point(425, 503);
             this.answerField.Name = "answerField";
             this.answerField.Size = new System.Drawing.Size(436, 64);
             this.answerField.TabIndex = 6;
@@ -136,7 +142,7 @@
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.scoreField);
             this.Controls.Add(this.answerField);
-            this.Controls.Add(this.pic_animal);
+            this.Controls.Add(this.pic);
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.homeButton);
             this.Controls.Add(this.pictureBox2);
@@ -146,7 +152,7 @@
             this.Controls.SetChildIndex(this.pictureBox2, 0);
             this.Controls.SetChildIndex(this.homeButton, 0);
             this.Controls.SetChildIndex(this.backButton, 0);
-            this.Controls.SetChildIndex(this.pic_animal, 0);
+            this.Controls.SetChildIndex(this.pic, 0);
             this.Controls.SetChildIndex(this.answerField, 0);
             this.Controls.SetChildIndex(this.scoreField, 0);
             this.Controls.SetChildIndex(this.scoreLabel, 0);
@@ -154,7 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_animal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,7 +172,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox homeButton;
         private System.Windows.Forms.PictureBox backButton;
-        private System.Windows.Forms.PictureBox pic_animal;
+        private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.TextBox answerField;
         private System.Windows.Forms.Label scoreField;
         private System.Windows.Forms.Label scoreLabel;

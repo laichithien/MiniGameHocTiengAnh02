@@ -112,6 +112,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\pineapple.webp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -148,6 +149,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\database\animal\cat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papaya.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pineapple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\strawberry.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watermelon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apple.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\avocado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coconut.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grapes.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kiwi.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
