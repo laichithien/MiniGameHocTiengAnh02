@@ -35,5 +35,22 @@ namespace MiniGameHocTiengAnh02.Game
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void backButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void backButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            LandingScreen landingScreen = new LandingScreen();
+            landingScreen.Show();
+            this.Hide();
+        }
     }
 }
