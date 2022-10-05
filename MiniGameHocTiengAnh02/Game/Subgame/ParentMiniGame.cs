@@ -18,6 +18,9 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         DataTable dtFruit = new DataTable();
         DataTable dtColor = new DataTable();
         DataTable dtVehicle = new DataTable();
+
+        Int32[] isDisplay;
+
         public ParentMiniGame(string category)
         {
             InitializeComponent();
@@ -71,7 +74,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             dtColor.Rows.Add(5, "gray");
             dtColor.Rows.Add(6, "white");
             dtColor.Rows.Add(7, "black");
-            dtColor.Rows.Add(8, "yellow");
+            dtColor.Rows.Add(8, "yellow");  
             dtColor.Rows.Add(9, "brown");
             dtColor.Rows.Add(10, "orange");
 
@@ -80,17 +83,17 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             dtVehicle.Columns.Add("ID", typeof(Int32));
             dtVehicle.Columns.Add("Name", typeof(string));
 
-            dtColor.Rows.Add(0, "car");
-            dtColor.Rows.Add(1, "bus");
-            dtColor.Rows.Add(2, "motorcycle");
-            dtColor.Rows.Add(3, "bicycle");
-            dtColor.Rows.Add(4, "van");
-            dtColor.Rows.Add(5, "truck");
-            dtColor.Rows.Add(6, "crane");
-            dtColor.Rows.Add(7, "tractor");
-            dtColor.Rows.Add(8, "helicopter");
-            dtColor.Rows.Add(9, "airplane");
-            dtColor.Rows.Add(10, "train");
+            dtVehicle.Rows.Add(0, "car");
+            dtVehicle.Rows.Add(1, "bus");
+            dtVehicle.Rows.Add(2, "motorcycle");
+            dtVehicle.Rows.Add(3, "bicycle");
+            dtVehicle.Rows.Add(4, "van");
+            dtVehicle.Rows.Add(5, "truck");
+            dtVehicle.Rows.Add(6, "crane");
+            dtVehicle.Rows.Add(7, "tractor");
+            dtVehicle.Rows.Add(8, "helicopter");
+            dtVehicle.Rows.Add(9, "airplane");
+            dtVehicle.Rows.Add(10, "train");
 
             if (category == "animal")
             {
@@ -200,37 +203,48 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 {
 
                     case 0:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.banana;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Red;
                         break;
                     case 1:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.apple;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Green;
                         break;
                     case 2:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.pineapple;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Blue;
                         break;
                     case 3:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.papaya;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Cyan;
                         break;
                     case 4:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.watermelon;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Purple;
                         break;
                     case 5:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.grapes;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Gray;
                         break;
                     case 6:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.orange;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.White;
                         break;
                     case 7:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.avocado;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Black;
                         break;
                     case 8:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.strawberry;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Yellow;
                         break;
                     case 9:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.kiwi;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Brown;
                         break;
                     case 10:
-                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.coconut;
+                        pic.BackgroundImage = null;
+                        pic.BackColor = Color.Orange;
                         break;
                     default:
                         break;
@@ -260,6 +274,10 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             else if (category == "fruit")
             {
                 pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.banana;
+            }
+            else if (category == "color")
+            {
+                pic.BackColor = Color.Red;
             }
             //answerField.Text = curr_name;
         }
@@ -340,6 +358,16 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             LandingScreen landingScreen = new LandingScreen();
             landingScreen.Show();
             this.Hide();
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }   

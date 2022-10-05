@@ -66,5 +66,22 @@ namespace MiniGameHocTiengAnh02.Game
             landingScreen.Show();
             this.Hide();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            ParentMiniGame parentMiniGame = new ParentMiniGame("color");
+            parentMiniGame.Show();
+            this.Hide();
+        }
+
+        private void pictureBox4_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox4_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
     }
 }
