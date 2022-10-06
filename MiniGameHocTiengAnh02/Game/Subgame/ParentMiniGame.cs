@@ -357,6 +357,38 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             answerField.Clear();
 
             //Check xem mang da day chua 
+            
+        }
+
+
+
+        private void answerField_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                confirmAnswer(isCorrect());
+
+                bool flag = true;
+                for (int i = 0; i < isPlayed.Count(); i++)
+                {
+                    if (!isPlayed[i])
+                        flag = false;
+                }
+
+                if (flag)
+                {
+                    MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
+                    HomeScreen homeScreen = new HomeScreen();
+                    homeScreen.Show();
+                    this.Hide();
+                }
+                else getRandID();
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            confirmAnswer(isCorrect());
             bool flag = true;
             for (int i = 0; i < isPlayed.Count(); i++)
             {
@@ -367,25 +399,11 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             if (flag)
             {
                 MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
-                Application.Exit();
+                HomeScreen homeScreen = new HomeScreen();
+                homeScreen.Show();
+                this.Hide();
             }
-        }
-
-
-
-        private void answerField_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                confirmAnswer(isCorrect());
-                getRandID();
-            }
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            confirmAnswer(isCorrect());
-            getRandID();
+            else getRandID();
         }
 
         private void backButton_Click(object sender, EventArgs e)
