@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Windows.Forms;
@@ -19,7 +20,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         DataTable dtColor = new DataTable();
         DataTable dtVehicle = new DataTable();
 
-        Int32[] isDisplay;
+        bool[] isPlayed = new bool[11];
 
         public ParentMiniGame(string category)
         {
@@ -106,6 +107,10 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             else if (category == "color")
             {
                 dt = dtColor;
+            }
+            else if (category == "vehicle")
+            {
+                dt = dtVehicle;
             }
         }
 
@@ -250,6 +255,48 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                         break;
                 }
             }
+            else if (this.category == "vehicle")
+            {
+                switch (curr_ID)
+                {
+
+                    case 0:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.car;
+                        break;
+                    case 1:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.bus;
+                        break;
+                    case 2:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.motorcycle;
+                        break;
+                    case 3:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.bicycle;
+                        break;
+                    case 4:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.van;
+                        break;
+                    case 5:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.truck;
+                        break;
+                    case 6:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.crane;
+                        break;
+                    case 7:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.tractor;
+                        break;
+                    case 8:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.helicopter;
+                        break;
+                    case 9:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.airplane;
+                        break;
+                    case 10:
+                        pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.train;
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         private string getName(Int32 ID, DataTable dt)
@@ -267,63 +314,64 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         private void ParentMiniGame_Load(object sender, EventArgs e)
         {
             string curr_name = Convert.ToString(dt.Rows[curr_ID][1]);
-            if (category == "animal")
-            {
-                pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.rabbit;
-            }
-            else if (category == "fruit")
-            {
-                pic.BackgroundImage = MiniGameHocTiengAnh02.Properties.Resources.banana;
-            }
-            else if (category == "color")
-            {
-                pic.BackColor = Color.Red;
-            }
-            //answerField.Text = curr_name;
+            getRandID();
         }
+
+        private void getRandID()
+        {
+            //Check xem mang da day chua 
+            bool flag = true;
+            for (int i = 0; i < isPlayed.Count(); i++)
+            {
+                if (!isPlayed[i])
+                    flag = false;
+            }
+            if (flag) 
+            {
+                MessageBox.Show("Het roi");
+            };
+
+            Random rand = new Random();
+            Int16 rand_curr = Convert.ToInt16(rand.Next(1, 11));
+            while (isPlayed[rand_curr])
+            {
+                rand_curr = Convert.ToInt16(rand.Next(1, 11));
+            }
+            curr_ID = rand_curr;
+            changeImage(curr_ID);
+        }
+
+        private bool isCorrect()
+        {
+            return answerField.Text.Trim().ToLower() == getName(curr_ID, dt);
+        }
+
+        private void confirmAnswer(bool final_answer)
+        {
+            if (final_answer)
+            {
+                score += 2;
+            }
+            isPlayed[curr_ID] = true;
+            scoreField.Text = Convert.ToString(score);
+            answerField.Clear();
+        }
+
+
 
         private void answerField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13) ///e.KeyChar: vua nhan phim gi 13 == "Enter"
             {
-                if (curr_ID < dt.Rows.Count - 1)
-                {
-                    if (answerField.Text.Trim().ToLower() == getName(curr_ID, dt))
-                    {
-                        score += 2;
-                    }
-                    curr_ID++;
-                    scoreField.Text = Convert.ToString(score);
-                    answerField.Clear();
-
-                    changeImage(curr_ID);
-                }
-                else
-                {
-                    MessageBox.Show("Het roi!!!");
-                }
-
+                confirmAnswer(isCorrect());
+                getRandID();
             }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            if (curr_ID < dt.Rows.Count - 1)
-            {
-                if (answerField.Text.Trim().ToLower() == getName(curr_ID, dt))
-                {
-                    score += 2;
-                }
-                curr_ID++;
-                scoreField.Text = Convert.ToString(score);
-                answerField.Clear();
-
-                changeImage(curr_ID);
-            }
-            else
-            {
-                MessageBox.Show("Het roi!!");
-            }
+            confirmAnswer(isCorrect());
+            getRandID();
         }
 
         private void backButton_Click(object sender, EventArgs e)

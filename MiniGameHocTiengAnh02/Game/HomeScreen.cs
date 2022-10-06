@@ -83,5 +83,22 @@ namespace MiniGameHocTiengAnh02.Game
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            ParentMiniGame parentMiniGame = new ParentMiniGame("vehicle");
+            parentMiniGame.Show();
+            this.Hide();
+        }
     }
 }
