@@ -313,7 +313,6 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
 
         private void ParentMiniGame_Load(object sender, EventArgs e)
         {
-            string curr_name = Convert.ToString(dt.Rows[curr_ID][1]);
             getRandID();
         }
 
@@ -326,16 +325,17 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 if (!isPlayed[i])
                     flag = false;
             }
+
             if (flag) 
             {
                 MessageBox.Show("Het roi");
-            };
+            }
 
             Random rand = new Random();
-            Int16 rand_curr = Convert.ToInt16(rand.Next(1, 11));
+            Int16 rand_curr = Convert.ToInt16(rand.Next(0, 11));
             while (isPlayed[rand_curr])
             {
-                rand_curr = Convert.ToInt16(rand.Next(1, 11));
+                rand_curr = Convert.ToInt16(rand.Next(0, 11));
             }
             curr_ID = rand_curr;
             changeImage(curr_ID);
@@ -350,18 +350,32 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         {
             if (final_answer)
             {
-                score += 2;
+                score += 1;
             }
             isPlayed[curr_ID] = true;
             scoreField.Text = Convert.ToString(score);
             answerField.Clear();
+
+            //Check xem mang da day chua 
+            bool flag = true;
+            for (int i = 0; i < isPlayed.Count(); i++)
+            {
+                if (!isPlayed[i])
+                    flag = false;
+            }
+
+            if (flag)
+            {
+                MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
+                Application.Exit();
+            }
         }
 
 
 
         private void answerField_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)13) ///e.KeyChar: vua nhan phim gi 13 == "Enter"
+            if (e.KeyChar == (char)13)
             {
                 confirmAnswer(isCorrect());
                 getRandID();
