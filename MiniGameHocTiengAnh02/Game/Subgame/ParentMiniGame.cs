@@ -115,6 +115,51 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         }
 
         public string category;
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            HomeScreen homeScreen = new HomeScreen();
+            homeScreen.Show();
+            this.Hide();
+        }
+
+        private void backButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void backButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void homeButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void homeButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            LandingScreen landingScreen = new LandingScreen();
+            landingScreen.Show();
+            this.Hide();
+        }
+
+        private void pictureBox3_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+
 
         private void changeImage(Int32 curr_ID)
         {
@@ -306,11 +351,6 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             return curr_animal;
         }
 
-        private bool isCorrect(string input, string ans)
-        {
-            return input == ans ;
-        }
-
         private void ParentMiniGame_Load(object sender, EventArgs e)
         {
             getRandID();
@@ -360,8 +400,6 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             
         }
 
-
-
         private void answerField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
@@ -406,48 +444,6 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             else getRandID();
         }
 
-        private void backButton_Click(object sender, EventArgs e)
-        {
-            HomeScreen homeScreen = new HomeScreen();
-            homeScreen.Show();
-            this.Hide();
-        }
 
-        private void backButton_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void backButton_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-
-        private void homeButton_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void homeButton_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
-
-        private void homeButton_Click(object sender, EventArgs e)
-        {
-            LandingScreen landingScreen = new LandingScreen();
-            landingScreen.Show();
-            this.Hide();
-        }
-
-        private void pictureBox3_MouseEnter(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void pictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            this.Cursor = Cursors.Default;
-        }
     }
 }   
