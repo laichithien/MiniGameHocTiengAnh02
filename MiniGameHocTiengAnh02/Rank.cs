@@ -48,7 +48,6 @@ namespace MiniGameHocTiengAnh02
                 {
                     dt.Columns.Add(header);
                 }
-
                 dt.Columns[1].DataType = typeof(int);
                 while (!sr.EndOfStream)
                 {

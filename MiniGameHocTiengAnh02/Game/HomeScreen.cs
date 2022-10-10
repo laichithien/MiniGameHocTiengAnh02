@@ -111,7 +111,7 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void rankingButton_Click(object sender, EventArgs e)
         {
-            Rank rank = new Rank();
+            ShowingRank rank = new ShowingRank();
             rank.Show();
             this.Hide();
         }

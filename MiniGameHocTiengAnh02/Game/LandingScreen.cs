@@ -10,7 +10,6 @@ namespace MiniGameHocTiengAnh02.Game
 {
     public partial class LandingScreen : MiniGameHocTiengAnh02.Game.HomeParent
     {
-        InputName inputName = new InputName();
         public LandingScreen()
         {
             InitializeComponent();
@@ -28,6 +27,7 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void playLabel_Click(object sender, EventArgs e)
         {
+            InputName inputName = new InputName();
             inputName.Show();
             this.Hide();
         }

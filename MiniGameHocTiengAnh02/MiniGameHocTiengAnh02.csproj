@@ -90,11 +90,29 @@
     <Compile Include="Rank.Designer.cs">
       <DependentUpon>Rank.cs</DependentUpon>
     </Compile>
+    <Compile Include="Result.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Result.Designer.cs">
+      <DependentUpon>Result.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowingRank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowingRank.Designer.cs">
+      <DependentUpon>ShowingRank.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowVocab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ShowVocab.Designer.cs">
       <DependentUpon>ShowVocab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VocabList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VocabList.Designer.cs">
+      <DependentUpon>VocabList.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Game\HomeParent.resx">
       <DependentUpon>HomeParent.cs</DependentUpon>
@@ -122,8 +140,17 @@
     <EmbeddedResource Include="Rank.resx">
       <DependentUpon>Rank.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Result.resx">
+      <DependentUpon>Result.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowingRank.resx">
+      <DependentUpon>ShowingRank.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ShowVocab.resx">
       <DependentUpon>ShowVocab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VocabList.resx">
+      <DependentUpon>VocabList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

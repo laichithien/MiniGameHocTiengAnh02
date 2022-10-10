@@ -56,14 +56,17 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void listVocabButton_Click(object sender, EventArgs e)
         {
-            ShowVocab showVocab = new ShowVocab();
-            showVocab.Show();
+            //ShowVocab showVocab = new ShowVocab();
+            //showVocab.Show();
+            VocabList vocabList = new VocabList("");
+            vocabList.Show();
             this.Hide();
         }
 
         private void rankingButton_Click(object sender, EventArgs e)
         {
-            Rank rank = new Rank();
+            ShowingRank rank = new ShowingRank();
+            //Rank rank = new Rank();
             rank.Show();
             this.Hide();
         }

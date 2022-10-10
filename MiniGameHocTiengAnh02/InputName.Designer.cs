@@ -61,6 +61,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.userNameInputField);
             this.Name = "InputName";
+            this.Load += new System.EventHandler(this.InputName_Load);
             this.Controls.SetChildIndex(this.userNameInputField, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.ResumeLayout(false);

@@ -39,11 +39,19 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.progessLabel = new System.Windows.Forms.Label();
             this.progessLabelNum = new System.Windows.Forms.Label();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.axWindowsMediaPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.muteButton = new System.Windows.Forms.PictureBox();
+            this.unmuteButton = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muteButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unmuteButton)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
@@ -101,7 +109,7 @@
             this.answerField.Name = "answerField";
             this.answerField.Size = new System.Drawing.Size(436, 64);
             this.answerField.TabIndex = 6;
-            this.answerField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.answerField_KeyPress);
+            this.answerField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.answerField_KeyDown);
             // 
             // scoreField
             // 
@@ -144,9 +152,9 @@
             this.progessLabel.Font = new System.Drawing.Font("Script MT Bold", 26F);
             this.progessLabel.Location = new System.Drawing.Point(1081, 162);
             this.progessLabel.Name = "progessLabel";
-            this.progessLabel.Size = new System.Drawing.Size(126, 53);
+            this.progessLabel.Size = new System.Drawing.Size(112, 53);
             this.progessLabel.TabIndex = 11;
-            this.progessLabel.Text = "label1";
+            this.progessLabel.Text = "Done";
             // 
             // progessLabelNum
             // 
@@ -159,10 +167,60 @@
             this.progessLabelNum.TabIndex = 12;
             this.progessLabelNum.Text = "1/11";
             // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(834, 613);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 13;
+            // 
+            // axWindowsMediaPlayer2
+            // 
+            this.axWindowsMediaPlayer2.Enabled = true;
+            this.axWindowsMediaPlayer2.Location = new System.Drawing.Point(721, 626);
+            this.axWindowsMediaPlayer2.Name = "axWindowsMediaPlayer2";
+            this.axWindowsMediaPlayer2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer2.OcxState")));
+            this.axWindowsMediaPlayer2.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer2.TabIndex = 14;
+            // 
+            // muteButton
+            // 
+            this.muteButton.BackColor = System.Drawing.Color.Transparent;
+            this.muteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("muteButton.BackgroundImage")));
+            this.muteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.muteButton.Location = new System.Drawing.Point(28, 586);
+            this.muteButton.Name = "muteButton";
+            this.muteButton.Size = new System.Drawing.Size(60, 60);
+            this.muteButton.TabIndex = 15;
+            this.muteButton.TabStop = false;
+            this.muteButton.Click += new System.EventHandler(this.muteButton_Click);
+            this.muteButton.MouseEnter += new System.EventHandler(this.muteButton_MouseEnter);
+            this.muteButton.MouseLeave += new System.EventHandler(this.muteButton_MouseLeave);
+            // 
+            // unmuteButton
+            // 
+            this.unmuteButton.BackColor = System.Drawing.Color.Transparent;
+            this.unmuteButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("unmuteButton.BackgroundImage")));
+            this.unmuteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.unmuteButton.Location = new System.Drawing.Point(28, 586);
+            this.unmuteButton.Name = "unmuteButton";
+            this.unmuteButton.Size = new System.Drawing.Size(60, 60);
+            this.unmuteButton.TabIndex = 15;
+            this.unmuteButton.TabStop = false;
+            this.unmuteButton.Click += new System.EventHandler(this.unmuteButton_Click);
+            this.unmuteButton.MouseEnter += new System.EventHandler(this.unmuteButton_MouseEnter);
+            this.unmuteButton.MouseLeave += new System.EventHandler(this.unmuteButton_MouseLeave);
+            // 
             // ParentMiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(1230, 672);
+            this.Controls.Add(this.unmuteButton);
+            this.Controls.Add(this.muteButton);
+            this.Controls.Add(this.axWindowsMediaPlayer2);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.progessLabelNum);
             this.Controls.Add(this.progessLabel);
             this.Controls.Add(this.pictureBox3);
@@ -185,11 +243,19 @@
             this.Controls.SetChildIndex(this.pictureBox3, 0);
             this.Controls.SetChildIndex(this.progessLabel, 0);
             this.Controls.SetChildIndex(this.progessLabelNum, 0);
+            this.Controls.SetChildIndex(this.axWindowsMediaPlayer1, 0);
+            this.Controls.SetChildIndex(this.axWindowsMediaPlayer2, 0);
+            this.Controls.SetChildIndex(this.muteButton, 0);
+            this.Controls.SetChildIndex(this.unmuteButton, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.muteButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unmuteButton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +273,9 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label progessLabel;
         private System.Windows.Forms.Label progessLabelNum;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer2;
+        private System.Windows.Forms.PictureBox muteButton;
+        private System.Windows.Forms.PictureBox unmuteButton;
     }
 }

@@ -22,8 +22,13 @@ namespace MiniGameHocTiengAnh02
             {
                 HomeScreen homeScreen = new HomeScreen(userNameInputField.Text);
                 homeScreen.Show();
-                this.Hide();
+                this.Close();
             }
+        }
+
+        private void InputName_Load(object sender, EventArgs e)
+        {
+            userNameInputField.Clear();
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
+using System.Media;
 
 namespace MiniGameHocTiengAnh02.Game.Subgame
 {
@@ -33,7 +34,9 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         public ParentMiniGame(string category, string userName)
         {
             InitializeComponent();
-
+            unmuteButton.Hide();
+            axWindowsMediaPlayer1.settings.volume = 10;
+            axWindowsMediaPlayer1.URL = "loop.mp3";
             this.category = category;
             this.userName = userName;
 
@@ -404,41 +407,18 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             if (final_answer)
             {
                 score += 2;
+                axWindowsMediaPlayer2.URL = "correct.mp3";
             }
+            else axWindowsMediaPlayer2.URL = "incorrect.mp3";
             if (count < dt.Rows.Count)
             {
                 count++;
             }
-            else count = count;
             isPlayed[curr_ID] = true;
             scoreField.Text = Convert.ToString(score);
             progessLabelNum.Text = Convert.ToString(count) + "/" + dt.Rows.Count;
             answerField.Clear();
             
-        }
-        private void answerField_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                confirmAnswer(isCorrect());
-                bool flag = true;
-                for (int i = 0; i < isPlayed.Count(); i++)
-                {
-                    if (!isPlayed[i])
-                        flag = false;
-                }
-
-                if (flag)
-                {
-                    MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
-                    loadRank();
-                    saveRank();
-                    HomeScreen homeScreen = new HomeScreen(userName);
-                    homeScreen.Show();
-                    this.Hide();
-                }
-                else getRandID();
-            }
         }
         private void loadRank()
         {
@@ -500,7 +480,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 default:
                     break;
             }
-            dtRank.Rows.Add(userName, Convert.ToString(score), DateTime.Now);
+            dtRank.Rows.Add(userName, Convert.ToString(score), DateTime.Now.ToString("dd/MM/yyyy"));
             StringBuilder sb = new StringBuilder();
 
             IEnumerable<string> columnNames = dtRank.Columns.Cast<DataColumn>().
@@ -514,6 +494,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             }
             System.IO.File.WriteAllText(path, sb.ToString(), System.Text.Encoding.UTF8);
         }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             confirmAnswer(isCorrect());
@@ -526,14 +507,76 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
 
             if (flag)
             {
-                MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
+                //MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
                 loadRank();
-                saveRank();
-                HomeScreen homeScreen = new HomeScreen(userName);
-                homeScreen.Show();
-                this.Hide();
+                saveRank(); Result result = new Result(score);
+                //System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["HomeScreen"];
+                result.Show();
+                this.Close();
             }
             else getRandID();
+        }
+
+        private void answerField_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                confirmAnswer(isCorrect());
+                bool flag = true;
+                for (int i = 0; i < isPlayed.Count(); i++)
+                {
+                    if (!isPlayed[i])
+                        flag = false;
+                }
+
+                if (flag)
+                {
+                    //MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
+                    loadRank();
+                    saveRank();
+                    Result result = new Result(score);
+                    //System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["HomeScreen"];
+                    result.Show();
+                    this.Close();
+                }
+                else getRandID();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void unmuteButton_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+            muteButton.Show();
+            unmuteButton.Hide();
+        }
+
+        private void muteButton_Click(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.pause();
+            unmuteButton.Show();
+            muteButton.Hide();
+        }
+
+        private void unmuteButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void unmuteButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void muteButton_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void muteButton_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }   
