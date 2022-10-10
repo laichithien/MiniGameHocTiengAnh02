@@ -84,12 +84,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rank.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rank.Designer.cs">
-      <DependentUpon>Rank.cs</DependentUpon>
-    </Compile>
     <Compile Include="Result.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +95,6 @@
     </Compile>
     <Compile Include="ShowingRank.Designer.cs">
       <DependentUpon>ShowingRank.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ShowVocab.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ShowVocab.Designer.cs">
-      <DependentUpon>ShowVocab.cs</DependentUpon>
     </Compile>
     <Compile Include="VocabList.cs">
       <SubType>Form</SubType>
@@ -137,17 +125,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rank.resx">
-      <DependentUpon>Rank.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Result.resx">
       <DependentUpon>Result.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowingRank.resx">
       <DependentUpon>ShowingRank.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ShowVocab.resx">
-      <DependentUpon>ShowVocab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VocabList.resx">
       <DependentUpon>VocabList.cs</DependentUpon>
