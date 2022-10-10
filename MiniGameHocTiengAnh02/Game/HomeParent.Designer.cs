@@ -45,6 +45,7 @@
             this.rankingButton.Size = new System.Drawing.Size(60, 60);
             this.rankingButton.TabIndex = 2;
             this.rankingButton.TabStop = false;
+            this.rankingButton.Click += new System.EventHandler(this.rankingButton_Click);
             this.rankingButton.MouseEnter += new System.EventHandler(this.rankingButton_MouseEnter);
             this.rankingButton.MouseLeave += new System.EventHandler(this.rankingButton_MouseLeave);
             // 
@@ -58,6 +59,7 @@
             this.listVocabButton.Size = new System.Drawing.Size(60, 60);
             this.listVocabButton.TabIndex = 3;
             this.listVocabButton.TabStop = false;
+            this.listVocabButton.Click += new System.EventHandler(this.listVocabButton_Click);
             this.listVocabButton.MouseEnter += new System.EventHandler(this.listVocabButton_MouseEnter);
             this.listVocabButton.MouseLeave += new System.EventHandler(this.listVocabButton_MouseLeave);
             // 

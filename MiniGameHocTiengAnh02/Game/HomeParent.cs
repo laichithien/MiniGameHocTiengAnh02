@@ -48,8 +48,23 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            LandingScreen landingScreen = new LandingScreen();
-            landingScreen.Show();
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LandingScreen"];
+            f.StartPosition = FormStartPosition.CenterScreen;
+            f.Show();
+            this.Hide();
+        }
+
+        private void listVocabButton_Click(object sender, EventArgs e)
+        {
+            ShowVocab showVocab = new ShowVocab();
+            showVocab.Show();
+            this.Hide();
+        }
+
+        private void rankingButton_Click(object sender, EventArgs e)
+        {
+            Rank rank = new Rank();
+            rank.Show();
             this.Hide();
         }
     }
