@@ -11,14 +11,16 @@ namespace MiniGameHocTiengAnh02.Game
 {
     public partial class HomeScreen : MiniGameHocTiengAnh02.Game.HomeParent
     {
-        public HomeScreen()
+        public string userName;
+        public HomeScreen(string userName)
         {
             InitializeComponent();
+            this.userName = userName;
         }
 
         private void Animal_Click(object sender, EventArgs e)
         {
-            ParentMiniGame parentMiniGame = new ParentMiniGame("animal");
+            ParentMiniGame parentMiniGame = new ParentMiniGame("animal", userName);
             parentMiniGame.Show();
             this.Hide();
         }
@@ -45,7 +47,7 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void fruitOptionButton_Click(object sender, EventArgs e)
         {
-            ParentMiniGame parentMiniGame = new ParentMiniGame("fruit");
+            ParentMiniGame parentMiniGame = new ParentMiniGame("fruit", userName);
             parentMiniGame.Show();
             this.Hide();
         }
@@ -62,14 +64,14 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            LandingScreen landingScreen = new LandingScreen();
-            landingScreen.Show();
+            System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LandingScreen"];
+            f.Show();
             this.Hide();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            ParentMiniGame parentMiniGame = new ParentMiniGame("color");
+            ParentMiniGame parentMiniGame = new ParentMiniGame("color", userName);
             parentMiniGame.Show();
             this.Hide();
         }
@@ -96,8 +98,21 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            ParentMiniGame parentMiniGame = new ParentMiniGame("vehicle");
+            ParentMiniGame parentMiniGame = new ParentMiniGame("vehicle", userName);
             parentMiniGame.Show();
+            this.Hide();
+        }
+        private void listVocabButton_Click(object sender, EventArgs e)
+        {
+            ShowVocab showVocab = new ShowVocab();
+            showVocab.Show();
+            this.Hide();
+        }
+
+        private void rankingButton_Click(object sender, EventArgs e)
+        {
+            Rank rank = new Rank();
+            rank.Show();
             this.Hide();
         }
     }

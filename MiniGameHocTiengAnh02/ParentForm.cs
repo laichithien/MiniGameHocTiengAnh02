@@ -12,6 +12,7 @@ namespace MiniGameHocTiengAnh02
 {
     public partial class ParentForm : Form
     {
+        
         public ParentForm()
         {
             InitializeComponent();
@@ -30,6 +31,10 @@ namespace MiniGameHocTiengAnh02
         private void exitButton_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        private void ParentForm_Load(object sender, EventArgs e)
+        {
         }
     }
 }

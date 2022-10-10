@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Security.Cryptography;
 
 namespace MiniGameHocTiengAnh02.Game.Subgame
 {
@@ -14,19 +17,25 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
     {
         Int32 score = 0;
         Int32 curr_ID = 0;
+        Int32 count = 1;
         DataTable dt = new DataTable();
         DataTable dtAnimal = new DataTable();
         DataTable dtFruit = new DataTable();
         DataTable dtColor = new DataTable();
         DataTable dtVehicle = new DataTable();
+        DataTable dtRank = new DataTable();
 
         bool[] isPlayed = new bool[11];
 
-        public ParentMiniGame(string category)
+        public string category;
+        public string userName;
+
+        public ParentMiniGame(string category, string userName)
         {
             InitializeComponent();
 
             this.category = category;
+            this.userName = userName;
 
             //-----------------------------------//
             //Animal database
@@ -113,13 +122,11 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 dt = dtVehicle;
             }
         }
-
-        public string category;
         private void backButton_Click(object sender, EventArgs e)
         {
-            HomeScreen homeScreen = new HomeScreen();
+            System.Windows.Forms.Form homeScreen = System.Windows.Forms.Application.OpenForms["HomeScreen"];
             homeScreen.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void backButton_MouseEnter(object sender, EventArgs e)
@@ -144,7 +151,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
 
         private void homeButton_Click(object sender, EventArgs e)
         {
-            LandingScreen landingScreen = new LandingScreen();
+            System.Windows.Forms.Form landingScreen = System.Windows.Forms.Application.OpenForms["LandingScreen"];
             landingScreen.Show();
             this.Hide();
         }
@@ -353,7 +360,13 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
 
         private void ParentMiniGame_Load(object sender, EventArgs e)
         {
+            progessLabelNum.Text = Convert.ToString(count) + "/" + dt.Rows.Count;
             getRandID();
+            switch (category)
+            {
+                case "Animal":
+                    break;
+            }
         }
 
         private void getRandID()
@@ -390,22 +403,24 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         {
             if (final_answer)
             {
-                score += 1;
+                score += 2;
             }
+            if (count < dt.Rows.Count)
+            {
+                count++;
+            }
+            else count = count;
             isPlayed[curr_ID] = true;
             scoreField.Text = Convert.ToString(score);
+            progessLabelNum.Text = Convert.ToString(count) + "/" + dt.Rows.Count;
             answerField.Clear();
-
-            //Check xem mang da day chua 
             
         }
-
         private void answerField_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)13)
             {
                 confirmAnswer(isCorrect());
-
                 bool flag = true;
                 for (int i = 0; i < isPlayed.Count(); i++)
                 {
@@ -416,14 +431,89 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 if (flag)
                 {
                     MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
-                    HomeScreen homeScreen = new HomeScreen();
+                    loadRank();
+                    saveRank();
+                    HomeScreen homeScreen = new HomeScreen(userName);
                     homeScreen.Show();
                     this.Hide();
                 }
                 else getRandID();
             }
         }
+        private void loadRank()
+        {
+            string path = "";
+            switch (category)
+            {
+                case "animal":
+                    path = @"C:\Users\laich\source\repos\MiniGameHocTiengAnh\MiniGameHocTiengAnh02\assets\AnimalRanking.csv";
+                    break;
+                case "vehicle":
+                    path = @"C:\Users\laich\source\repos\MiniGameHocTiengAnh\MiniGameHocTiengAnh02\assets\VehicleRanking.csv";
+                    break;
+                case "color":
+                    path = @"C:\Users\laich\source\repos\MiniGameHocTiengAnh\MiniGameHocTiengAnh02\assets\ColorRanking.csv";
+                    break;
+                case "fruit":
+                    path = @"C:\Users\laich\source\repos\MiniGameHocTiengAnh\MiniGameHocTiengAnh02\assets\FruitRanking.csv";
+                    break;
+                default:
+                    break;
+            }
+            // Open the file to read from.
+            using (StreamReader sr = new StreamReader(path))
+            {
+                string[] headers = sr.ReadLine().Split(',');
+                foreach (string header in headers)
+                {
+                    dtRank.Columns.Add(header);
+                }
+                while (!sr.EndOfStream)
+                {
+                    string[] rows = sr.ReadLine().Split(',');
+                    DataRow dr = dtRank.NewRow();
+                    for (int i = 0; i < headers.Length; i++)
+                    {
+                        dr[i] = rows[i];
+                    }
+                    dtRank.Rows.Add(dr);
+                }
+            }
+        }
+        private void saveRank()
+        {
+            string path = "";
+            switch (category)
+            {
+                case "animal":
+                    path = "C:\\Users\\laich\\source\\repos\\MiniGameHocTiengAnh\\MiniGameHocTiengAnh02\\assets\\AnimalRanking.csv";
+                    break;
+                case "vehicle":
+                    path = "C:\\Users\\laich\\source\\repos\\MiniGameHocTiengAnh\\MiniGameHocTiengAnh02\\assets\\VehicleRanking.csv";
+                    break;
+                case "color":
+                    path = "C:\\Users\\laich\\source\\repos\\MiniGameHocTiengAnh\\MiniGameHocTiengAnh02\\assets\\ColorRanking.csv";
+                    break;
+                case "fruit":
+                    path = "C:\\Users\\laich\\source\\repos\\MiniGameHocTiengAnh\\MiniGameHocTiengAnh02\\assets\\FruitRanking.csv";
+                    break;
+                default:
+                    break;
+            }
+            dtRank.Rows.Add(userName, Convert.ToString(score), DateTime.Now);
+            StringBuilder sb = new StringBuilder();
 
+            IEnumerable<string> columnNames = dtRank.Columns.Cast<DataColumn>().
+                                              Select(column => column.ColumnName);
+            sb.AppendLine(string.Join(",", columnNames));
+
+            foreach (DataRow row in dtRank.Rows)
+            {
+                IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
+                sb.AppendLine(string.Join(",", fields));
+            }
+            System.IO.File.WriteAllText(path, sb.ToString(), System.Text.Encoding.UTF8);
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             confirmAnswer(isCorrect());
@@ -437,13 +527,13 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
             if (flag)
             {
                 MessageBox.Show("Tổng điểm của bạn là: " + Convert.ToString(score));
-                HomeScreen homeScreen = new HomeScreen();
+                loadRank();
+                saveRank();
+                HomeScreen homeScreen = new HomeScreen(userName);
                 homeScreen.Show();
                 this.Hide();
             }
             else getRandID();
         }
-
-
     }
 }   

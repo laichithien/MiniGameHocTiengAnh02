@@ -37,6 +37,8 @@
             this.scoreField = new System.Windows.Forms.Label();
             this.scoreLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.progessLabel = new System.Windows.Forms.Label();
+            this.progessLabelNum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).BeginInit();
@@ -136,10 +138,33 @@
             this.pictureBox3.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
             this.pictureBox3.MouseLeave += new System.EventHandler(this.pictureBox3_MouseLeave);
             // 
+            // progessLabel
+            // 
+            this.progessLabel.AutoSize = true;
+            this.progessLabel.Font = new System.Drawing.Font("Script MT Bold", 26F);
+            this.progessLabel.Location = new System.Drawing.Point(1081, 162);
+            this.progessLabel.Name = "progessLabel";
+            this.progessLabel.Size = new System.Drawing.Size(126, 53);
+            this.progessLabel.TabIndex = 11;
+            this.progessLabel.Text = "label1";
+            // 
+            // progessLabelNum
+            // 
+            this.progessLabelNum.AutoSize = true;
+            this.progessLabelNum.BackColor = System.Drawing.Color.White;
+            this.progessLabelNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progessLabelNum.Location = new System.Drawing.Point(1106, 229);
+            this.progessLabelNum.Name = "progessLabelNum";
+            this.progessLabelNum.Size = new System.Drawing.Size(83, 39);
+            this.progessLabelNum.TabIndex = 12;
+            this.progessLabelNum.Text = "1/11";
+            // 
             // ParentMiniGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(1230, 672);
+            this.Controls.Add(this.progessLabelNum);
+            this.Controls.Add(this.progessLabel);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.scoreField);
@@ -149,7 +174,6 @@
             this.Controls.Add(this.homeButton);
             this.Controls.Add(this.pictureBox2);
             this.Name = "ParentMiniGame";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.ParentMiniGame_Load);
             this.Controls.SetChildIndex(this.pictureBox2, 0);
             this.Controls.SetChildIndex(this.homeButton, 0);
@@ -159,6 +183,8 @@
             this.Controls.SetChildIndex(this.scoreField, 0);
             this.Controls.SetChildIndex(this.scoreLabel, 0);
             this.Controls.SetChildIndex(this.pictureBox3, 0);
+            this.Controls.SetChildIndex(this.progessLabel, 0);
+            this.Controls.SetChildIndex(this.progessLabelNum, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.homeButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.backButton)).EndInit();
@@ -179,5 +205,7 @@
         private System.Windows.Forms.Label scoreField;
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label progessLabel;
+        private System.Windows.Forms.Label progessLabelNum;
     }
 }

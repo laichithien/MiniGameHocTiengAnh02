@@ -121,7 +121,7 @@
   <data name="rankingButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXxSURBVHhe7b0J
+        DAAACwwBP0AiyAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEXxSURBVHhe7b0J
         mB1XfaZ/vAsb7xtgMJtZbdksgYGEbSZO4P/PQxJmAhmSQIAAE5YJTMjEWSCIMAl2AKnV8hIFghMSQuJA
         gDExNpL6Xsm7LRwMNrYsY5uAbQzBG951+575Vfsn3Kr7ya7uPlX3VN33fZ738SKpq+45p77vVOt23QDQ
         NeI1yyNWc7YXsKK+vAAAIFdU0aFWFR1qfXkBAECuqKJDrSo61PryAgCAXFFFh1pVdKj15QUAALmiig61
@@ -426,7 +426,7 @@
   <data name="listVocabButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAC+tSURBVHhe7d1f
+        DQAACw0B7QfALAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAC+tSURBVHhe7d1f
         qFzlucfx2bGV3CQm8eRfldI7QVos9o9tEhBNqKi0sKXaQrWWxCRNTjhYk0hMEVMtWqJo5068a7wqhd7o
         rXpzwHikFA625CoH76RUOETtSVD2Os+zJ2vvmbV+s/c7OzNrvet9vxcfiA/nz7p45vk9e2atd/WKooDS
         791hXjRvmP82/1sc3rlQ/Pu2/yv+498+Kp7Y8l/FqRv2y/9dAAAiJ4vZ6ve2md+a/zFFzWNfqTuy/fPi

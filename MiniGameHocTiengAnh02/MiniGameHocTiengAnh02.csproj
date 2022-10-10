@@ -70,6 +70,12 @@
     <Compile Include="Game\Subgame\ParentMiniGame.Designer.cs">
       <DependentUpon>ParentMiniGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="InputName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputName.Designer.cs">
+      <DependentUpon>InputName.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rank.Designer.cs">
+      <DependentUpon>Rank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowVocab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowVocab.Designer.cs">
+      <DependentUpon>ShowVocab.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Game\HomeParent.resx">
       <DependentUpon>HomeParent.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,6 +108,9 @@
     <EmbeddedResource Include="Game\Subgame\ParentMiniGame.resx">
       <DependentUpon>ParentMiniGame.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InputName.resx">
+      <DependentUpon>InputName.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ParentForm.resx">
       <DependentUpon>ParentForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +118,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rank.resx">
+      <DependentUpon>Rank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowVocab.resx">
+      <DependentUpon>ShowVocab.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -215,6 +242,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\database\vehicle\bus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

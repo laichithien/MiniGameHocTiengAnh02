@@ -10,6 +10,7 @@ namespace MiniGameHocTiengAnh02.Game
 {
     public partial class LandingScreen : MiniGameHocTiengAnh02.Game.HomeParent
     {
+        InputName inputName = new InputName();
         public LandingScreen()
         {
             InitializeComponent();
@@ -27,8 +28,7 @@ namespace MiniGameHocTiengAnh02.Game
 
         private void playLabel_Click(object sender, EventArgs e)
         {
-            HomeScreen homeScreen = new HomeScreen();
-            homeScreen.Show();
+            inputName.Show();
             this.Hide();
         }
 
@@ -42,6 +42,10 @@ namespace MiniGameHocTiengAnh02.Game
         {
             this.Cursor = Cursors.Default;
             playLabel.ForeColor = Color.DimGray;
+        }
+
+        private void LandingScreen_Load(object sender, EventArgs e)
+        {
         }
     }
 }
