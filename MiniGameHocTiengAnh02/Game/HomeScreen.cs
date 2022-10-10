@@ -102,18 +102,5 @@ namespace MiniGameHocTiengAnh02.Game
             parentMiniGame.Show();
             this.Hide();
         }
-        private void listVocabButton_Click(object sender, EventArgs e)
-        {
-            ShowVocab showVocab = new ShowVocab();
-            showVocab.Show();
-            this.Hide();
-        }
-
-        private void rankingButton_Click(object sender, EventArgs e)
-        {
-            ShowingRank rank = new ShowingRank();
-            rank.Show();
-            this.Hide();
-        }
     }
 }
