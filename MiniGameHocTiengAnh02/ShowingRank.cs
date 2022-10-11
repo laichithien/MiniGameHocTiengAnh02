@@ -279,7 +279,7 @@ namespace MiniGameHocTiengAnh02
         {
             System.Windows.Forms.Form f = System.Windows.Forms.Application.OpenForms["LandingScreen"];
             f.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void backButton_MouseEnter(object sender, EventArgs e)

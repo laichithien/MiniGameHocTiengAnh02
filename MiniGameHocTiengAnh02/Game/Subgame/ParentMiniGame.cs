@@ -34,6 +34,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         public ParentMiniGame(string category, string userName)
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             unmuteButton.Hide();
             axWindowsMediaPlayer1.settings.volume = 10;
             axWindowsMediaPlayer1.URL = "loop.mp3";
@@ -365,11 +366,7 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
         {
             progessLabelNum.Text = Convert.ToString(count) + "/" + dt.Rows.Count;
             getRandID();
-            switch (category)
-            {
-                case "Animal":
-                    break;
-            }
+            this.CenterToScreen();
         }
 
         private void getRandID()
