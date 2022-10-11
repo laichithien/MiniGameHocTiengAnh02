@@ -2953,7 +2953,7 @@
   <data name="muteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAA/dJREFUeF7t3c9qE1EUx/ErtKXa1FZBl+pGBRe6ce9K/L9Mk4rgLrTQpLhxW/Ap
+        DgAACw4BQL7hQQAAA/dJREFUeF7t3c9qE1EUx/ErtKXa1FZBl+pGBRe6ce9K/L9Mk4rgLrTQpLhxW/Ap
         9BFUUJ/EpTsR1BbxAQSpdTx3ekcnmUkyYybp3Hu+HzjYpJOSy/nd0+QWogEAAAAAAAAAAAAAAAAAAACC
         FnW7t6OdnTl3E1pEnc5K1Ou9kPotAVhwd0ODaHv7luz8z9L8KC4CoEPfrk+aTwB0iH/Xp3c9AdAhteuz
         jU+KAIQp2tq6Iw3+kmn4YBGAsBTa9ekiAOEovOvTRQD8J2/tVqWZxXd9ugiA36SJd+UV/tdMY4sWAfDT
@@ -2976,7 +2976,7 @@
   <data name="unmuteButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAADRhJREFUeF7tnQuMXFUZx0+hhd3Zna68xGoU31rBgtGooFjlYaopIMrsnd2WbBSp
+        DgAACw4BQL7hQQAADRhJREFUeF7tnQuMXFUZx0+hhd3Zna68xGoU31rBgtGooFjlYaopIMrsnd2WbBSp
         qJ1tK5pqxCwFhQKxoYKxRtFASq1GHiKQ1PXREiwCfVktVTGUYgtY5VHb0nbb7fj/Zr5p75773dfO7szd
         e79f8mWzc77vzL3z/c+5r3PONYqiKIqiKIqiKIqiKIqiKIqiKIqiKIqiKFmjzThXt5tif7tx5udM93vx
         0bhqiZIJ2kxxIQRQPmLOv/D3pjbTeRq7KGnGK4AhthblpRPMhXl2V9JGiAAqhsPETvQMi1tN8bUcpqSF

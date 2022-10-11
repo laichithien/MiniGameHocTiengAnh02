@@ -109,7 +109,6 @@
             this.answerField.Name = "answerField";
             this.answerField.Size = new System.Drawing.Size(436, 44);
             this.answerField.TabIndex = 6;
-            this.answerField.Text = "White";
             this.answerField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.answerField_KeyDown);
             // 
             // scoreField
