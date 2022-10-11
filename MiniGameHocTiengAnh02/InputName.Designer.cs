@@ -34,11 +34,12 @@
             // 
             // userNameInputField
             // 
-            this.userNameInputField.Font = new System.Drawing.Font("Ravie", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userNameInputField.Location = new System.Drawing.Point(371, 205);
+            this.userNameInputField.Font = new System.Drawing.Font("Goudy Stout", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userNameInputField.Location = new System.Drawing.Point(389, 229);
             this.userNameInputField.Name = "userNameInputField";
-            this.userNameInputField.Size = new System.Drawing.Size(415, 70);
+            this.userNameInputField.Size = new System.Drawing.Size(415, 53);
             this.userNameInputField.TabIndex = 1;
+            this.userNameInputField.Text = "Thien";
             this.userNameInputField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.userNameInputField.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.userNameInputField_KeyPress);
             // 
@@ -46,11 +47,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Ravie", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Goudy Stout", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(111, 62);
+            this.label1.Location = new System.Drawing.Point(143, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(968, 107);
+            this.label1.Size = new System.Drawing.Size(933, 68);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter your name";
             // 

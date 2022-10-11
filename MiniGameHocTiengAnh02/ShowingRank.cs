@@ -164,6 +164,10 @@ namespace MiniGameHocTiengAnh02
                 score = this.dt.Rows[0]["Score"].ToString();
                 user = this.dt.Rows[0]["User"].ToString();
                 date = this.dt.Rows[0]["Date"].ToString();
+                if (user.Length >= 5)
+                {
+                    user = user.Substring(0,5) + "...";
+                }
                 firstLabel.Text = user;
                 firstScore.Text = score;
                 firstDate.Text = date;
@@ -179,6 +183,10 @@ namespace MiniGameHocTiengAnh02
                 score = dt.Rows[1]["Score"].ToString();
                 user = dt.Rows[1]["User"].ToString();
                 date = dt.Rows[1]["Date"].ToString();
+                if (user.Length >= 5)
+                {
+                    user = user.Substring(0, 5) + "...";
+                }
                 secondLabel.Text = user;
                 secondScore.Text = score;
                 secondDate.Text = date;
@@ -197,6 +205,10 @@ namespace MiniGameHocTiengAnh02
                 score = dt.Rows[2]["Score"].ToString();
                 user = dt.Rows[2]["User"].ToString();
                 date = dt.Rows[2]["Date"].ToString();
+                if (user.Length >= 5)
+                {
+                    user = user.Substring(0, 5) + "...";
+                }
                 thirdLabel.Text = user;
                 thirdScore.Text = score;
                 thirdDate.Text = date;
@@ -213,6 +225,10 @@ namespace MiniGameHocTiengAnh02
                 score = dt.Rows[3]["Score"].ToString();
                 user = dt.Rows[3]["User"].ToString();
                 date = dt.Rows[3]["Date"].ToString();
+                if (user.Length >= 5)
+                {
+                    user = user.Substring(0, 5) + "...";
+                }
                 fourthLabel.Text = user;
                 fourthScore.Text = score;
                 fourthDate.Text = date;
@@ -228,6 +244,10 @@ namespace MiniGameHocTiengAnh02
                 score = dt.Rows[4]["Score"].ToString();
                 user = dt.Rows[4]["User"].ToString();
                 date = dt.Rows[4]["Date"].ToString();
+                if (user.Length >= 6)
+                {
+                    user = user.Substring(0, 6) + "...";
+                }
                 fifthLabel.Text = user;
                 fifthScore.Text = score;
                 fifthDate.Text = date;

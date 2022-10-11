@@ -477,7 +477,11 @@ namespace MiniGameHocTiengAnh02.Game.Subgame
                 default:
                     break;
             }
-            dtRank.Rows.Add(userName, Convert.ToString(score), DateTime.Now.ToString("dd/MM/yyyy"));
+            if (userName != "")
+            {
+                dtRank.Rows.Add(userName.Trim(), Convert.ToString(score), DateTime.Now.ToString("dd/MM/yyyy"));
+            }
+            else dtRank.Rows.Add("No name", Convert.ToString(score), DateTime.Now.ToString("dd/MM/yyyy"));
             StringBuilder sb = new StringBuilder();
 
             IEnumerable<string> columnNames = dtRank.Columns.Cast<DataColumn>().

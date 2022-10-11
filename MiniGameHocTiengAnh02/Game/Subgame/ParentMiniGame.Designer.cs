@@ -104,11 +104,12 @@
             // 
             // answerField
             // 
-            this.answerField.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.answerField.Font = new System.Drawing.Font("Goudy Stout", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.answerField.Location = new System.Drawing.Point(425, 503);
             this.answerField.Name = "answerField";
-            this.answerField.Size = new System.Drawing.Size(436, 64);
+            this.answerField.Size = new System.Drawing.Size(436, 44);
             this.answerField.TabIndex = 6;
+            this.answerField.Text = "White";
             this.answerField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.answerField_KeyDown);
             // 
             // scoreField
